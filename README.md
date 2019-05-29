@@ -1,5 +1,5 @@
 # Hydra-Cutups
-![hydra](https://github.com/geoff-maddock/hydra/blob/master/hydra-3-01.png?raw=true)
+![sunwarp.js screenshot](sunwarp.png?raw=true "Sunwarp.js Screenshot")
 
 [Hydra](https://hydra-editor.glitch.me/) is a set of tools for livecoding networked visuals, inspired by analog modular synthesizers.
 
