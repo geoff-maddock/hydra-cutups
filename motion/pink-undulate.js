@@ -1,0 +1,2 @@
+osc(60,0.03,1).modulate(o1).blend(o0,0.9).layer(osc(60,0.03,1).modulate(noise(2,0.03)).rotate(1).luma(0.7,0).hue(0.8)).out(o1)
+src(o1).modulate(src(o0).contrast(2).luma(0.7,0.1),0.03).blend(o0,0.9).out(o0)
