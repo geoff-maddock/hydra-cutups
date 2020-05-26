@@ -1,0 +1,23 @@
+// shape(2)
+// .color(2,2,3)
+// .scale(.6)
+// .modulate(osc(50,0),.2)
+//           .mult(osc(20,.11))
+//           .diff(solid(.0,1,.9))
+//           .pixelate(100,100)
+//           .rotate(Math.PI/2)
+//           .scrollX(.5)
+// .scrollY(.1,-.1)
+//           .kaleid(2)
+//           .modulate(noise(10))
+// .rotate(() => time % 10)
+//           .scale(()=>time %5 + 2,() => time % 5+2)
+//           .out(o0)
+
+DD=0.01;b=(o,u,i,y,z)=>o().add(solid(1,1,1),DD).thresh(i*0.2*(z-y)+y,0).luma(0.5,0).color(c(u,i,0),c(u,i,1),c(u,i,2));c=(u,i,j)=>{let cc = u.split("/"), cs = cc[cc.length - 1].split("-");return parseInt("0x" + cs[i].substring(2*j, 2+2*j))/255;};colorize=(x,u,y=0,z=1)=>b(x,u,0,y,z).layer(b(x,u,1,y,z)).layer(b(x,u,2,y,z)).layer(b(x,u,3,y,z)).layer(b(x,u,4,y,z))
+
+url='eccbd9-e1eff6-97d2fb-83bcff-80ffe8'
+solid(1,1,1).out(o1)
+z=()=>osc(2,.3).contrast(0.7)
+src(o1).modulateRotate(src(o1).hue(0.5),.003,.001).modulateScale(src(o1).saturate(0),0.003,1).layer(colorize(z,url).pixelate(1,1).mask(shape(1000,0.2,0.0)).modulate(solid(0,-0.25).add(osc(1,1).color(0,1,0).posterize(4)),1)).out(o1)
+solid().layer(o1).out(o0)
