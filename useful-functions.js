@@ -13,4 +13,8 @@
 // ()=>Math.sin(time) % 5
 
 // modify source o0
-src(o0).scale(1).scrollX(()=>Math.sin(time*0.1)*0.005).brightness(0.1).contrast(1.31),
+src(o0).scale(1).scrollX(()=>Math.sin(time*0.1)*0.005).brightness(0.1).contrast(1.31)
+
+// antila
+// geometric and color functions
+//https://github.com/ritchse/hydra-antlia/blob/master/antlia.js
