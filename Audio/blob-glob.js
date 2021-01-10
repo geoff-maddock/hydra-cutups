@@ -1,7 +1,3 @@
-// Cellular & Blobular
-// by Mahalia H-R
-// IG: mm_hr_
-
 speed = 0.3
 
 shape(20,0.2,0.3)
@@ -11,6 +7,7 @@ shape(20,0.2,0.3)
   .modulateRotate(o0)
   .scale(() => Math.sin(time)+1 *1.5)
   .modulate(noise(2,2))
-  .rotate(1, .2)
-  //.invert(2.4)
+  //.rotate(1, .2)
+  .rotate(() => a.fft[1], .2)
+  // .invert(2.4)
 .out(o0)
