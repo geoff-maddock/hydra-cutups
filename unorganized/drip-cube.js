@@ -1,0 +1,22 @@
+gradient().hue(.6).saturate(4).colorama(0.5)
+  .modulate(osc(20,-.1).posterize(5).sub(gradient()),1)
+  .kaleid(4)
+  .out(o1)
+
+src(o0).mask(shape(4,.999,0)).modulate(
+  solid(0,-1)
+  .mult(noise(9,.1).pixelate(2000,1).thresh(0,0).color(0,1),.3)
+  .add(gradient().r().brightness(-.5),0.5)
+  .layer(
+    shape(2,0.25,0).r().scrollY(-.5+0.125)
+    .mult(osc(3,0,1.57).brightness(-.5).modulate(
+      noise(10,0).add(noise(20,0),.5)
+      .modulateScale(gradient().g().color(1,0)).sub(gradient()),1)
+         .color(3,1).add(solid(.7,-1)))),0.005)
+  .layer(
+  src(o1).hue().mask(shape(4,1,0)).scale(.4)
+  .modulateScale(gradient().g().color(1,0),1,.5).rotate(-.2).scroll(.25,.15))
+  .layer(
+  src(o1).mask(shape(4,1,0)).scale(.4)
+  .modulateScale(gradient().g().color(1,0),1,.5).rotate(.1).scroll(-.25,.25))
+  .out()

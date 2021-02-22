@@ -1,0 +1,9 @@
+s0.initImage('https://i.imgur.com/6MkmRuk.jpg')
+osc().diff(osc(30).rotate())
+	.modulate(noise(5))
+	.modulateRotate(osc(8))
+	.modulateScrollY(o0,.1).scale(.98)
+	.color(-.7,-.1,-.2).add(src(o0).saturate(0).luma(.26),.5)
+	.layer(src(s0).luma().saturate(0).color(1.5,1.2,0).scrollY(.02))
+	.out()
+speed=.5
