@@ -6,7 +6,7 @@ pb.setName("cutups-method");
 s0.initStream("cutups-method");
 
 // render to the screen
-s0.initStream("myGraphics")
+s0.initStream("cutups-method")
 src(s0).out()
 
 // to get a list of sources
