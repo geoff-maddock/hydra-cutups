@@ -1,0 +1,16 @@
+a.show()
+voronoi(8,.1)
+
+  	.modulateScale(osc(8).rotate(Math.sin(time)),.6)
+	.brightness([-.02,-.17].smooth().fast(2))
+	.color(2.83,0.91,() => a.fft[1] + .5)
+	.rotate(0, 0.1)
+	.modulate(o0, () => mouse.x * -0.00009)
+	.scale(1.01)
+  .modulateKaleid(shape(4,0.1,10))
+.mult(osc(20, 0.001, 0)).blend(o0, 0.5).modulateScale(osc(1, 0),-0.03).scale(1, () => (1.05 + 0.1 * Math.sin(0.053*time)))
+
+  .blend(o0)
+.blend(o0)
+.scale(() => a.fft[0] / 3   + .5)
+.out()
